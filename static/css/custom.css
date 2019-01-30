@@ -686,7 +686,9 @@ div.output_area .rendered_html table {
 .alert {
     color: #276f86;
 }
-
+.text_cell_render ol li {
+    font-size: inherit;
+}
 
 
 
@@ -843,6 +845,7 @@ ul.no-bullets {
     font-size: 1rem;
     font-weight: 400;
 }
+
 .ability-score {
     float: right;
 }
@@ -1460,3 +1463,11 @@ ul.ascii > li > ul > li:last-child > ul > li:last-child > ul > li:last-child > u
 ul.ascii > li > ul > li:last-child > ul > li:last-child > ul > li:last-child > ul > li > ul > li:last-child::before { content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0│\00a0\00a0\00a0└──\00a0"; }
 ul.ascii > li > ul > li:last-child > ul > li:last-child > ul > li:last-child > ul > li:last-child > ul > li::before { content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0├──\00a0"}
 ul.ascii > li > ul > li:last-child > ul > li:last-child > ul > li:last-child > ul > li:last-child > ul > li:last-child::before { content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0└──\00a0"; }
+
+.full_screen_margin {
+    width: 75%;
+    margin: auto;
+}
+.language-markdown {
+    font-size: inherit !important;
+}
