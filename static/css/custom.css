@@ -685,6 +685,7 @@ div.output_area .rendered_html table {
 }
 .alert {
     color: #276f86;
+    padding: 0.25rem 1.25rem !important
 }
 .text_cell_render ol li {
     font-size: inherit;
@@ -1476,4 +1477,8 @@ table.dataframe {
 }
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
     background: #f5f2f0 !important;
+}
+.image-description {
+    text-align: center;
+    font-style: italic;
 }
