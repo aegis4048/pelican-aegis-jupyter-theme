@@ -44,6 +44,7 @@
             {% endif %}
             <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/custom.css" media="screen">
             <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/ipynb.css" media="screen">
+
             <style>
                 #progressBar::-webkit-progress-value {
                     background-color: {{ PROGRESSBAR_COLOR }};
@@ -55,6 +56,14 @@
         {% endblock head_links %}
 
         <link href="{{ SITEURL }}/theme/libs/prism.css" rel="stylesheet" />
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    processEscapes: true
+                }
+            });
+        </script>
 
         {% include '_includes/favicon_links.html' %}
         {% block feed_links %}
@@ -123,6 +132,7 @@
             });
         </script>
 
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="{{ SITEURL }}/theme/js/custom.js"></script>
         {% block script %}
             <script>
