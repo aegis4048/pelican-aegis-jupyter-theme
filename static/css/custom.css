@@ -374,13 +374,13 @@ article h1 {
     font-size: 2rem;
 }
 article h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 article h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 }
 article h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 article .article-date {
     color: #9E9E9E;
@@ -440,7 +440,7 @@ article div.social-links li a:hover {
   text-decoration: none;
 }
 article p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     margin-bottom: 20px;
     line-height: 1.6em;
     margin-top: 20px;
@@ -626,7 +626,6 @@ article .meta a.comments_btn:hover {
     min-width: inherit !important;
     text-align: left;
 }
-
 .rendered_html thead {
     border-bottom: 1px solid black;
     vertical-align: bottom;
@@ -656,6 +655,7 @@ article .meta a.comments_btn:hover {
 .rendered_html th {
     font-weight: bold;
     background: unset;
+    display: table-cell !important;
 }
 .rendered_html thead > tr {
     background: white;
@@ -1323,37 +1323,7 @@ blockquote.quote span{
 }
 
 /* item  */
-.rounded-list ol > li
-{
-    position:relative; /* Create a positioning context */
-    list-style:none; /* Disable the normal item numbering */
-    background:#f6f6f6; /* Item background color */
-    margin:0; /* Give each list item a left margin to make room for the numbers */
-    padding-left: 15px; /* Add some spacing around the content */
-    padding-bottom:0px;
-    padding-top:0px;
-}
 
-/* number  */
-.rounded-list ol > li p:before
-{
-    content: counter(li);
-    counter-increment: li;
-    position: absolute;
-    left: -1.3em;
-    top: 50%;
-
-    /* number background */
-    background: #87ceeb;
-    height: 2em;
-    width: 2em;
-    margin-top: -1em;
-    line-height: 1.5em;
-    border: .3em solid #fff;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 2em;
-}
 
 /* -------------------------------------- */
 
@@ -1497,6 +1467,405 @@ table.dataframe {
     margin: auto;
     width: 85%;
 }
+/* Jupyter Notebook Markdown Tables */
+
+.jupyter-markdown-table {
+	background: white;
+	border-radius: 3px;
+	border-collapse: collapse;
+	margin: auto;
+	max-width: 600px;
+	padding: 5px;
+	width: 100%;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	animation: float 5s infinite;
+    margin-bottom: 1.8rem !important;
+    margin-top: 2rem !important;
+}
+
+.jupyter-markdown-table th {
+	color: white;
+	background: #1b1e24 !important;
+	border-bottom: 4px solid #9ea7af;
+	border-right: 1px solid #343a45;
+	font-size: 1rem;
+	font-weight: 300;
+    padding: 16px;
+	text-align: center !important;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	vertical-align: middle;
+	display: table-cell !important;
+}
+
+.jupyter-markdown-table th:first-child {
+	border-top-left-radius: 3px;
+}
+
+.jupyter-markdown-table th:last-child {
+	border-top-right-radius: 3px;
+	border-right: none;
+}
+
+.jupyter-markdown-table tr {
+	border-top: 1px solid #C1C3D1;
+	border-bottom-: 1px solid #C1C3D1;
+	color: #666B85;
+	font-size: 16px;
+	font-weight: normal;
+	text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+.jupyter-markdown-table tr:hover td {
+	background: #4E5066;
+	color: #FFFFFF;
+	border-top: 1px solid #22262e;
+}
+
+.jupyter-markdown-table tr:first-child {
+	border-top: none;
+}
+
+.jupyter-markdown-table tr:last-child {
+	border-bottom: none;
+}
+
+.jupyter-markdown-table tr:nth-child(odd) td {
+	background: #EBEBEB;
+}
+
+.jupyter-markdown-table tr:nth-child(odd):hover td {
+	background: #4E5066;
+}
+
+.jupyter-markdown-table tr:last-child td:first-child {
+	border-bottom-left-radius: 3px;
+}
+
+.jupyter-markdown-table tr:last-child td:last-child {
+	border-bottom-right-radius: 3px;
+}
+
+.jupyter-markdown-table td {
+	background: #FFFFFF;
+    padding: 15px 0 !important;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: 300;
+	font-size: 1rem;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+	border-right: 1px solid #C1C3D1;
+}
+
+.jupyter-markdown-table td:last-child {
+	border-right: 0px;
+}
+
+.jupyter-markdown-table th.text-left {
+	text-align: left;
+}
+
+.jupyter-markdown-table th.text-center {
+	text-align: center;
+}
+
+.jupyter-markdown-table th.text-right {
+	text-align: right;
+}
+
+.jupyter-markdown-table td.text-left {
+	text-align: left;
+}
+
+.jupyter-markdown-table td.text-center {
+	text-align: center;
+}
+
+.jupyter-markdown-table td.text-right {
+	text-align: right;
+}
+.token.operator {
+    background: unset !important;
+}
+/* Jupyter Notebook Bullet Lists */
+ol.rounded-list {
+    margin-bottom: 1.5rem !important;
+}
+ol.rounded-list,
+.rounded-list ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+    padding-inline-start: 10px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0!important;
+
+}
+
+.rounded-list ol ol {
+    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+
+.rounded-list a:hover{
+    background: #eee;
+}
+
+.rounded-list a:hover:before{
+    transform: rotate(360deg);
+}
+
+.rounded-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.rounded-list p {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+
+.rounded-list p:hover{
+    background: #eee;
+}
+
+.rounded-list p:hover:before{
+    transform: rotate(360deg);
+}
+
+.rounded-list p:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+#MathJax-Element-3811-Frame,
+#MathJax-Element-3711-Frame,
+#MathJax-Element-3611-Frame {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+.index-container {
+    background-color: #F0F4F5;
+    padding-bottom: 0.1px;
+}
+.index-post-card {
+    -ms-flex: 1 1 300px;
+    display: flex;
+    flex: 1 1 300px;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    min-height: 300px;
+    background: #fff 50%;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    transition: all .5s ease;
+}
+.index-post-card:hover {
+    box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+    transition: all .4s ease;
+    transform: translate3D(0,-1px,0) scale(1.02);
+}
+.index-post-card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+.index-post-card-image {
+    margin: 10px 0;
+    width: 100%;
+    height: 150px;
+    background: #c5d2d9 no-repeat 50%;
+    object-fit: cover;
+    vertical-align: middle;
+    max-width: 100%;
+    border: 0;
+}
+.index-post-card-large h2 {
+    font-size: 1.5rem !important;
+}
+.index-post-card-content {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.index-post-card-content-link {
+    color: inherit !important;
+    text-decoration: none !important;
+    position: relative;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: block;
+    padding: 25px 25px 0;
+}
+.index-post-card-tags {
+    display: block;
+    margin-bottom: 4px;
+    color: #738a94;
+    font-size: 1rem;
+    line-height: 1.15em;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.index-post-card-title {
+    margin-top: 0;
+    font-size: 2rem;
+}
+.index-post-card-excerpt {
+    font-family: Georgia,serif;
+}
+.index-post-card-meta {
+
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    padding: 0 25px 25px;
+}
+.index-author-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.index-author-list-item:first-child {
+    z-index: 10;
+}
+.index-author-list-item {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+.index-author-name-tooltip {
+    margin-left: 40px;
+    margin-bottom: 8px;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    display: block;
+    padding: 2px 8px;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    background: #15171a;
+    border-radius: 3px;
+    box-shadow: 0 12px 26px rgba(39,44,49,.08), 1px 3px 8px rgba(39,44,49,.03);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.4,.01,.165,.99);
+    transform: translateY(6px);
+    pointer-events: none;
+}
+.tooltip-opacity {
+    opacity: unset;
+}
+.index-static-avatar {
+    display: block;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    margin: 0 -5px;
+    width: 34px;
+    height: 34px;
+}
+.index-author-profile-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #e3e9ed;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.index-reading-time {
+    flex-shrink: 0;
+    margin-right: 10px;
+    color: #738a94;
+    font-size: 0.8rem;
+    line-height: 33px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+.index-comment-icon {
+    line-height: 33px;
+    margin-right: 7px;
+    color: #5b7a83;
+}
+
 
 @media only screen and (max-width: 768px) {
     .mobile_responsive_plot {
@@ -1507,4 +1876,41 @@ table.dataframe {
     margin: auto;
     width: 85%;
     }
+}
+@media (min-width:795px) {
+	.index-post-card-large {
+		-ms-flex: 1 1 100%;
+		flex: 1 1 100%;
+		-ms-flex-direction: row;
+		flex-direction: row;
+        height: 380px !important;
+	}
+	.index-post-card-large .index-post-card-image-link {
+        margin: 40px 0px;
+        margin-left: 20px;
+		position: relative;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		border-radius: 5px 0 0 5px
+	}
+	.index-post-card-large .index-post-card-image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+        margin: 0;
+	}
+	.index-post-card-large .index-post-card-content {
+		-ms-flex: 0 1 335px;
+		flex: 0 1 335px;
+	}
+	.index-post-card-large p {
+		font-size: 0.85rem;
+		line-height: 1.55em
+	}
+	.index-post-card-large .post-card-content-link {
+		padding: 30px 40px 0
+	}
+	.index-post-card-large .post-card-meta {
+		padding: 0 40px 30px
+	}
 }

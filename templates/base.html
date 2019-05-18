@@ -56,14 +56,19 @@
         {% endblock head_links %}
 
         <link href="{{ SITEURL }}/theme/libs/prism.css" rel="stylesheet" />
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({
-                tex2jax: {
-                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                    processEscapes: true
-                }
-            });
-        </script>
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+"HTML-CSS": {
+  linebreaks: { automatic: true, width: "container" }
+}
+});
+
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
         {% include '_includes/favicon_links.html' %}
         {% block feed_links %}
@@ -103,7 +108,7 @@
                 </nav>
             </div>
         </div>
-        <div id="wrap" class="mb-5">
+        <div id="wrap">
             {% block content %}{% endblock %}
         </div>
         {% include '_includes/footer.html' %}
@@ -118,6 +123,8 @@
         {% endif %}
 
         <script src="{{ SITEURL }}/theme/libs/prism.js"></script>
+        <script src="{{ SITEURL }}/theme/libs/Countable.js"></script>
+
         <script>
             Prism.plugins.NormalizeWhitespace.setDefaults({
                 'remove-trailing': true,
@@ -132,8 +139,7 @@
             });
         </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-MML-AM_CHTML.js"></script>
+
         <script type="text/javascript" src="{{ SITEURL }}/theme/js/custom.js"></script>
         {% block script %}
             <script>
@@ -146,3 +152,5 @@
         {% include '_includes/stat_counter.html' %}
     </body>
 </html>
+
+
