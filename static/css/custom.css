@@ -444,7 +444,7 @@ article div.social-links li a:hover {
   text-decoration: none;
 }
 article p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0;
     line-height: 1.6em;
     margin-top: 20px;
@@ -1872,6 +1872,50 @@ ol.rounded-list,
     line-height: 33px;
     margin-right: 7px;
     color: #5b7a83;
+}
+.eq-terms {
+    background-color: #fafafa;
+    border-radius: 2px;
+    border: 2px solid #e5e5e5;
+    padding: 0.8rem 1rem;
+    padding-bottom: 0.5rem;
+    border-left: 2px solid #507cb3;
+    font-size: 1rem;
+    font-family: monaco,'Source Code Pro',monospace,'Courier New';
+    margin-top: 20px;
+}
+.eq-terms-where {
+    color: #008;
+    margin: 0;
+    padding-left: 0 !important;
+    margin-bottom: 10px;	
+}
+.eq-terms .row {
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.highlights {
+margin-top: 20px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    border: 2px solid #e5e5e5;
+    padding: 0.8rem 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 3px solid #23a19d;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.highlights-title {
+    color: #23a19d;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.highlights-content {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 40px;
 }
 
 
