@@ -1894,6 +1894,9 @@ ol.rounded-list,
     margin-bottom: 10px;
     padding-left: 15px;
 }
+.eq-terms p {
+    margin-top: 0 !important;
+}
 
 .highlights {
 margin-top: 20px;
@@ -1918,6 +1921,33 @@ margin-top: 20px;
     padding-left: 40px;
 }
 
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+#toc_container li, #toc_container ul, #toc_container ul li {
+    list-style: outside none none !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.toc_list a {
+    text-decoration: none !important;
+}
+.toc_label {
+    color: black;
+    padding-right: 10px;
+}
 
 @media only screen and (max-width: 768px) {
     .mobile_responsive_plot_full_width {
