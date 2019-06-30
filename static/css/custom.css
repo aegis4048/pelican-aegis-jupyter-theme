@@ -21,6 +21,14 @@ body {
 hr {
     border-top: 2px solid rgba(0,0,0,.1) !important;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.2;
+    color: inherit;
+    margin-top: 20px;
+}
 /*navbar begin*/
 .banner {
     background-color: #24292e !important;
@@ -1625,7 +1633,7 @@ ol.rounded-list,
     margin: .5em 0;
     background: #ddd;
     color: #444;
-    text-decoration: none;
+    text-decoration: none !important;
     border-radius: .3em;
     transition: all .3s ease-out;
 }
