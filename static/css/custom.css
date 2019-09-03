@@ -1283,6 +1283,9 @@ span#MathJax-Span-198,
 span#MathJax-Span-199 {
     color: unset ! important
 }
+.math-inline .mi {
+    font-size: 100% !important;
+}
 .admonition-image {
     max-width: 100%;
 }
@@ -1896,7 +1899,7 @@ ol.rounded-list,
     color: #008;
     margin: 0;
     padding-left: 0 !important;
-    margin-bottom: 10px;	
+    margin-bottom: 10px;
 }
 .eq-terms .row {
     margin-bottom: 10px;
@@ -2023,6 +2026,9 @@ margin-top: 20px;
     padding-right: 30px;
     padding-bottom: 25px;
     padding-top: 25px;
+}
+.solution_title.solution_admonition{
+    background-color: #276f86 !important;
 }
 
 @media only screen and (max-width: 768px) {
