@@ -146,7 +146,7 @@ function init_panel_toolbox() {
             $COMPONENT_PANEL.css('display', 'block');
         }
 
-        $ICON.toggleClass('fa-chevron-up fa-chevron-down');
+        $ICON.toggleClass('fa-chevron-down fa-chevron-up');
     });
 }
 
