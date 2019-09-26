@@ -5,6 +5,7 @@
 body {
     font-size: 0.85rem;
     min-width: 310px;
+    font-family: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 }
 .no-margin {
     margin: 0 !important;
@@ -454,7 +455,7 @@ article div.social-links li a:hover {
 article p {
     font-size: 1rem;
     margin-bottom: 0;
-    line-height: 1.6em;
+    line-height: 1.7em;
     margin-top: 20px;
 }
 article p.note {
@@ -1289,6 +1290,9 @@ span#MathJax-Span-199 {
 .admonition-image {
     max-width: 100%;
 }
+.admonition-image-medium {
+    max-width: 100%;
+}
 #layout {
     margin-top: 2rem;
 }
@@ -1707,8 +1711,8 @@ ol.rounded-list,
     padding-left: 0 !important;
     list-style-type: none;
     counter-reset: lis;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 15px;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    font-weight: 600;
 }
 
 .custom-counter li {
@@ -1767,8 +1771,6 @@ ol.rounded-list,
     margin-right: -15px;
     margin-left: -15px;
 }
-
-
 .index-container {
     background-color: #F0F4F5;
     padding-bottom: 0.1px;
@@ -1810,7 +1812,7 @@ ol.rounded-list,
     border: 0;
 }
 .index-post-card-large h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
 }
 .index-post-card-content {
     -ms-flex-positive: 1;
@@ -1833,9 +1835,9 @@ ol.rounded-list,
 }
 .index-post-card-tags {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 7px;
     color: #738a94;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.15em;
     font-weight: 500;
     letter-spacing: .5px;
@@ -1957,6 +1959,9 @@ ol.rounded-list,
     margin-top: 0 !important;
 }
 
+.highlight .hl-ipython3 pre {
+    font-size: 92.5%; ! important
+}
 .highlights {
 margin-top: 20px;
     background: #f0f0f0;
@@ -1970,12 +1975,12 @@ margin-top: 20px;
 }
 .highlights-title {
     color: #23a19d;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
 .highlights-content {
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 10px;
     padding-left: 40px;
 }
@@ -2066,14 +2071,14 @@ margin-top: 20px;
     display: block;
 }
 .solution_panel .solution_content {
-    padding-left: 30px;
+    padding-left: 15px;
     float: left;
     clear: both;
     width: 100%;
     position: relative;
-    padding-right: 30px;
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 9px;
+    padding-top: 8px;
 }
 .solution_title.solution_admonition{
     background-color: #276f86 !important;
@@ -2085,6 +2090,22 @@ margin-top: 20px;
 .indented .bullet-point {
     color: #666;
     font-weight: 800;
+}
+
+.grey_line {
+    border-top: 2px solid rgba(0,0,0,.1) !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2124,7 +2145,7 @@ margin-top: 20px;
 		flex: 0 1 335px;
 	}
 	.index-post-card-large p {
-		font-size: 0.85rem;
+		font-size: 0.95rem;
 		line-height: 1.55em
 	}
 	.index-post-card-large .post-card-content-link {
