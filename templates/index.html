@@ -22,52 +22,64 @@
 {% endblock meta_tags_in_head %}
 
 {% block content %}
-    <div class="index-container">
-        <div class="col masthead" align="center" style="background-image: url('{{ SITEURL }}/{{ INDEX_BANNER_IMAGE }}')">
-            <h1>{{ SITENAME }}</h1>
-            <h5>{{ SITESUBTITLE }}</h5>
+    <div class="row mb-5 ml-0 mr-0">
+        <div class="justify-content-end col-lg-3 col-md-12 index-left-col">
+            <div class="row no-margin">
+                <div class="mr-4">
+                    <img src="{{ PROFILE_PHOTO_FOOTER }}" class="index-author-photo" alt="{{ AUTHOR_LOWER }}">
+                </div>
+                <div class="name-subtitle">
+                    <div class="col no-padding">
+                        <h3 class="author__name">{{ AUTHOR_LOWER }}</h3>
+                    </div>
+                    <div class="col no-padding">
+                        <p class="author__bio">{{ AUTHOR_SUBTITLE }}</p>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="col-12 no-padding">
+                        <p></p><i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 6px;margin-left: 2px;"></i> Texas, USA</p>
+                        <p><i class="far fa-envelope" aria-hidden="true" style="margin-right: 8px;"></i>aegis4048@gmail.com</p>
+                    </div>
+                    <div class="col-12 no-padding">
+                        <p><a href="{{ LINKEDIN_LINK }}" class="color-inherit"><i class="fab fa-linkedin-in" aria-hidden="true" style="margin-right: 8px;"></i> LinkedIn</a></p>
+                        <p><a href="{{ GITHUB_LINK }}" class="color-inherit"><i class="fab fa-github" aria-hidden="true" style="margin-right: 5px;"></i> Github</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                second
+            </div>
         </div>
-        <div id="post-container" class="container post index" style="max-width: 1040px">
+        <div id="post-container" class="index col-lg-9 col-md-12 mt-4">
             {% for article in articles_page.object_list %}
 
-            <article class="index-post-card index-post index-post-card-large">
-                <a class="index-post-card-image-link" href="{{ SITEURL }}/{{ article.url }}">
-                <img class="index-post-card-image" srcset="{{ article.featured_image }} 300w,
-                    {{ article.featured_image }} 600w,
-                    {{ article.featured_image }} 1000w,
-                    {{ article.featured_image }} 2000w" sizes="(max-width: 1000px) 400px, 700px" src="{{ article.featured_image }}" alt="Neural Transfer Learning for Natural Language Processing (PhD thesis)">
-                </a>
-                <div class="index-post-card-content">
-                    <a class="index-post-card-content-link" href="{{ SITEURL }}/{{ article.url }}">
-                        <header class="index-post-card-header">
-                            <span class="index-post-card-tags">{{ article.category }}</span>
-                            <h2 class="index-post-card-title">{{ article.title }}</h2>
-                        </header>
-                        <section class="index-post-card-excerpt">
-                            <p>{{ article.indexpreview }}</p>
-                        </section>
-                    </a>
-                    <div class="index-post-card-meta">
-                        <ul class="index-author-list">
-                            <li class="index-author-list-item">
-                                <div class="index-author-name-tooltip">
-                                    {{ AUTHOR }}
-                                </div>
-                                <a href="{{ ABOUT_PAGE }}" class="index-static-avatar">
-                                <img class="index-author-profile-image" src="{{ PROFILE_PHOTO_ABOUT }}" alt="Sebastian Ruder">
-                                </a>
-                            </li>
-                        </ul>
+            <div class="article-row" onclick="window.location='{{ SITEURL }}/{{ article.url }}';">
+                <div class="article-cell-1">
+                    <img class="article-img" src="{{ article.featured_image }}"/>
+                </div>
+                <div class="article-cell-2">
+                    <div class="category">{{ article.category }}</div>
+                    <h2 class="">{{ article.title }}</h2>
+                    <p class="excerpt">{{ article.indexpreview }}</p>
+                    <div class="meta">
                         <div class="col">
-                            <div class="row justify-content-end">
-                                <span class="index-reading-time">{{ article.readingtime }} min read</span>
-                                <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
-                                <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+                            <div class="row justify-content-between">
+                                <div class="meta-left">
+                                    <i class="fa fa-calendar index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                    <span class="index-reading-time">{{ article.dateprev }}</span>
+                                </div>
+                                <div class="meta-right">
+                                    <i class="far fa-clock index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                    <span class="index-reading-time">{{ article.readingtime }} min reading</span>
+                                    <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                    <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </article>
+            </div>
             {% endfor %}
         </div>
     </div>
