@@ -28,28 +28,29 @@
 {% block content %}
 <div id="post-container" class="container post index list">
     <article>
-        <div class="h2 mt-3 title text-center mb-5">Archive</div>
+        <div class="h2 mt-3 title text-center mb-5 pop-over">Archive</div>
         <hr>
-        <div class="meta" style="margin-bottom: 30px; margin-top: 30px;">
+        <div class="meta pop-over" style="margin-bottom: 30px; margin-top: 30px;">
             {% for tag, articles in tags %}
                 <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }} ({{ articles | length }})</a>
             {% endfor %}
         </div>
         <ul class="double-list">
             {% for category, articles in categories %}
-                <h2 class="mt-3 mb-3">{{ category }}</h2>
-                {% for article in articles %}
-                    <li>
-                        <a href='/{{ article.url }}'>
-                            <h2>{{ article.title }}</h2>
-                            <span>{{ article.date.strftime('%m.%d.%Y') }}</span>
-                        </a>
-                    </li>
-                {% endfor %}
+                <div class="pop-over">
+                    <h2 class="mt-3 mb-3">{{ category }}</h2>
+                    {% for article in articles %}
+                        <li>
+                            <a href='/{{ article.url }}'>
+                                <h2>{{ article.title }}</h2>
+                                <span>{{ article.date.strftime('%m.%d.%Y') }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </div>
             {% endfor %}
-        <hr class="mt-4">
-
         </ul>
+        <div class="mt-4"></div>
     </article>
 </div>
 {% endblock content %}

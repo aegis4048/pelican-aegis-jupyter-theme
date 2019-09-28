@@ -23,57 +23,59 @@
 
 {% block content %}
     <div class="row mb-5 ml-0 mr-0">
-        <div class="justify-content-end col-lg-3 col-md-12 index-left-col">
-            <div class="row no-margin">
-                <div class="mr-4">
-                    <img src="{{ PROFILE_PHOTO_FOOTER }}" class="index-author-photo" alt="{{ AUTHOR_LOWER }}">
-                </div>
-                <div class="name-subtitle">
-                    <div class="col no-padding">
-                        <h3 class="author__name">{{ AUTHOR_LOWER }}</h3>
+        <div class="justify-content-end col-lg-3 col-md-12 index-left-col tr-effect">
+            <div class="row no-margin  pop-over">
+                <div class="index-author tr-effect">
+                    <div class="mr-4">
+                        <img src="{{ PROFILE_PHOTO_FOOTER }}" class="index-author-photo" alt="{{ AUTHOR_LOWER }}">
                     </div>
-                    <div class="col no-padding">
-                        <p class="author__bio">{{ AUTHOR_SUBTITLE }}</p>
+                    <div class="name-subtitle">
+                        <div class="col no-padding">
+                            <h3 class="author__name">{{ AUTHOR_LOWER }}</h3>
+                        </div>
+                        <div class="col no-padding">
+                            <p class="author__bio">{{ AUTHOR_SUBTITLE }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contacts">
-                    <div class="col-12 no-padding">
+                <div class="contacts-1 mt-1 tr-effect">
+                    <div class="">
                         <p></p><i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 6px;margin-left: 2px;"></i> Texas, USA</p>
                         <p><i class="far fa-envelope" aria-hidden="true" style="margin-right: 8px;"></i>aegis4048@gmail.com</p>
                     </div>
-                    <div class="col-12 no-padding">
+                </div>
+                <div class="contacts-2 mt-1 tr-effect">
+                    <div class="">
                         <p><a href="{{ LINKEDIN_LINK }}" class="color-inherit"><i class="fab fa-linkedin-in" aria-hidden="true" style="margin-right: 8px;"></i> LinkedIn</a></p>
                         <p><a href="{{ GITHUB_LINK }}" class="color-inherit"><i class="fab fa-github" aria-hidden="true" style="margin-right: 5px;"></i> Github</a></p>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                second
-            </div>
         </div>
-        <div id="post-container" class="index col-lg-9 col-md-12 mt-4">
+        <div id="post-container" class="index col-lg-9 col-md-12 mt-4 tr-effect">
             {% for article in articles_page.object_list %}
-
-            <div class="article-row" onclick="window.location='{{ SITEURL }}/{{ article.url }}';">
-                <div class="article-cell-1">
-                    <img class="article-img" src="{{ article.featured_image }}"/>
-                </div>
-                <div class="article-cell-2">
-                    <div class="category">{{ article.category }}</div>
-                    <h2 class="">{{ article.title }}</h2>
-                    <p class="excerpt">{{ article.indexpreview }}</p>
-                    <div class="meta">
-                        <div class="col">
-                            <div class="row justify-content-between">
-                                <div class="meta-left">
-                                    <i class="fa fa-calendar index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
-                                    <span class="index-reading-time">{{ article.dateprev }}</span>
-                                </div>
-                                <div class="meta-right">
-                                    <i class="far fa-clock index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
-                                    <span class="index-reading-time">{{ article.readingtime }} min reading</span>
-                                    <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
-                                    <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+            <div class="pop-over">
+                <div class="article-row" onclick="window.location='{{ SITEURL }}/{{ article.url }}';">
+                    <div class="article-cell-1">
+                        <img class="article-img" src="{{ article.featured_image }}"/>
+                    </div>
+                    <div class="article-cell-2">
+                        <div class="category">{{ article.category }}</div>
+                        <h2 class="">{{ article.title }}</h2>
+                        <p class="excerpt">{{ article.indexpreview }}</p>
+                        <div class="meta">
+                            <div class="col">
+                                <div class="row justify-content-between">
+                                    <div class="meta-left">
+                                        <i class="fa fa-calendar index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                        <span class="index-reading-time">{{ article.dateprev }}</span>
+                                    </div>
+                                    <div class="meta-right">
+                                        <i class="far fa-clock index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                        <span class="index-reading-time">{{ article.readingtime }} min reading</span>
+                                        <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                        <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,38 @@ body {
     min-width: 310px;
     font-family: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 }
+/* .banner-wrapper {
+    animation: .5s ease-out 0s .5 slideInFromLeft;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+.pop-over {
+    -webkit-animation: bummer 0.5s;
+    animation: bummer 0.5s;
+    -webkit-transform: scale(0,0);
+    transform: scale(0,0);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes bummer {
+    100% {
+        -webkit-transform: scale(1,1);
+    }
+}
+@keyframes bummer {
+    100% {
+        transform: scale(1,1);
+    }
+}
+.tr-effect {
+    transition: all .3s ease;
+}
 .no-margin {
     margin: 0 !important;
 }
@@ -2290,6 +2322,9 @@ margin-top: 20px;
     max-height: 100%;
     max-width: 100%;
 }
+.index-author {
+    display: unset;
+}
 .index-author-photo {
     border-radius: 50%;
     max-width: 130px;
@@ -2299,6 +2334,36 @@ margin-top: 20px;
     padding-left: 120px;
     padding-right: 0;
     margin-top: 25px;
+}
+.contacts-1 {
+    display: flex;
+    flex-grow: 1;
+    max-width: 200px;
+}
+.contacts-2 {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 15px;
+}
+@media (max-width: 992px) {
+    .index-author {
+        display: flex;
+        margin-right: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .index-author {
+        margin-right: 0;
+    }
+}
+@media (min-width: 992px) {
+    .contacts-1 {
+        width: 100%;
+    }
+    .contacts-2 {
+        width: 100%;
+        padding-top: 0;
+    }
 }
 
 @media (min-width: 768.1px) and (max-width: 1200px) {
@@ -2317,9 +2382,6 @@ margin-top: 20px;
     .index-author-photo {
         max-width: 75px;
         margin-top: 15px;
-    }
-    .contacts {
-        font-size: 0.9em;
     }
     .name-subtitle {
         margin-right: 25px;
@@ -2386,7 +2448,10 @@ margin-top: 20px;
         max-width: 75px;
         margin-top: 15px;
     }
-    .contacts {
+    .contacts-1 {
+        font-size: 0.75em;
+    }
+    .contacts-2 {
         font-size: 0.75em;
     }
     .author__name {
@@ -2394,5 +2459,8 @@ margin-top: 20px;
     }
     .author__bio {
         font-size: 0.75rem;
+    }
+    .index-author {
+        width: 100%;
     }
 }
