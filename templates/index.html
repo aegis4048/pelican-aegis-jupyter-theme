@@ -24,31 +24,66 @@
 {% block content %}
     <div class="row mb-5 ml-0 mr-0">
         <div class="justify-content-end col-lg-3 col-md-12 index-left-col tr-effect">
-            <div class="row no-margin  pop-over">
-                <div class="index-author tr-effect">
-                    <div class="mr-4">
-                        <img src="{{ PROFILE_PHOTO_FOOTER }}" class="index-author-photo" alt="{{ AUTHOR_LOWER }}">
-                    </div>
-                    <div class="name-subtitle">
-                        <div class="col no-padding">
-                            <h3 class="author__name">{{ AUTHOR_LOWER }}</h3>
+            <div class="index-scroll-container">
+                <div class="profile row no-margin pop-over">
+                    <div class="index-author tr-effect">
+                        <div class="mr-4">
+                            <img src="{{ PROFILE_PHOTO_FOOTER }}" class="index-author-photo" alt="{{ AUTHOR_LOWER }}">
                         </div>
-                        <div class="col no-padding">
-                            <p class="author__bio">{{ AUTHOR_SUBTITLE }}</p>
+                        <div class="name-subtitle">
+                            <div class="col no-padding">
+                                <h3 class="author__name">{{ AUTHOR_LOWER }}</h3>
+                            </div>
+                            <div class="col no-padding">
+                                <p class="author__bio">{{ AUTHOR_SUBTITLE }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts no-link mt-1 tr-effect">
+                        <div class="">
+                            <p><i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 6px;margin-left: 2px;"></i>{{ LOCATION }}</p>
+                            <p><i class="far fa-envelope" aria-hidden="true" style="margin-right: 8px;"></i>{{ EMAIL }}</p>
+                        </div>
+                    </div>
+                    <div class="contacts link mt-1 tr-effect">
+                        <div class="">
+                            <p><a href="{{ LINKEDIN_LINK }}" class="color-inherit" target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true" style="margin-right: 8px;"></i> LinkedIn</a></p>
+                            <p><a href="{{ GITHUB_LINK }}" class="color-inherit" target="_blank"><i class="fab fa-github" aria-hidden="true" style="margin-right: 5px;"></i> Github</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="contacts-1 mt-1 tr-effect">
-                    <div class="">
-                        <p></p><i class="fas fa-map-marker-alt" aria-hidden="true" style="margin-right: 6px;margin-left: 2px;"></i> Texas, USA</p>
-                        <p><i class="far fa-envelope" aria-hidden="true" style="margin-right: 8px;"></i>aegis4048@gmail.com</p>
+                <div class="read-next-card row no-margin pop-over" style="background-image: url('{{ SITEURL }}/{{ INDEX_BANNER_IMAGE }}')">
+                    <header class="read-next-card-header">
+                        <small class="read-next-card-header-sitetitle">— {{ SITENAME}} —</small>
+                        <h3 class="read-next-card-header-title">{{ CARD_TEXT }}</h3>
+                    </header>
+                    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg>
+    </div>
+                    <div class="read-next-card-content">
+                        <ul>
+                            {% for key, value in CARD_POSTS.items() %}
+                            <li><a href="{{ SITEURL }}/{{ value }}">{{ key }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="read-next-card-footer">
+                        <a href="{{ SITEURL }}/{{ ARCHIVE_PAGE }}">Go to Archive →</a>
                     </div>
                 </div>
-                <div class="contacts-2 mt-1 tr-effect">
-                    <div class="">
-                        <p><a href="{{ LINKEDIN_LINK }}" class="color-inherit"><i class="fab fa-linkedin-in" aria-hidden="true" style="margin-right: 8px;"></i> LinkedIn</a></p>
-                        <p><a href="{{ GITHUB_LINK }}" class="color-inherit"><i class="fab fa-github" aria-hidden="true" style="margin-right: 5px;"></i> Github</a></p>
-                    </div>
+                <div class="tagcloud-container row no-margin pop-over">
+                    <p class="title">TAG CLOUD</p>
+                    <ul class="tagcloud">
+                        {% for tag in tag_cloud %}
+                            <li class="tag-{{ tag.1 }}">
+                                <a href="{{ SITEURL }}/{{ tag.0.url }}">
+                                {{ tag.0 }}
+                                    {% if TAG_CLOUD_BADGE %}
+                                        <span class="badge">{{ tag.2 }}</span>
+                                    {% endif %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -67,11 +102,11 @@
                             <div class="col">
                                 <div class="row justify-content-between">
                                     <div class="meta-left">
-                                        <i class="fa fa-calendar index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                        <i class="fa fa-calendar index-comment-icon"></i>
                                         <span class="index-reading-time">{{ article.dateprev }}</span>
                                     </div>
                                     <div class="meta-right">
-                                        <i class="far fa-clock index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
+                                        <i class="far fa-clock index-comment-icon"></i>
                                         <span class="index-reading-time">{{ article.readingtime }} min reading</span>
                                         <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></i>
                                         <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread"></a>
