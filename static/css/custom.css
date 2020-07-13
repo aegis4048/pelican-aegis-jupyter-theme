@@ -132,7 +132,7 @@ hr {
     font-size: 0.8rem !important
 }
 .nav-link.collapsed {
-    background-color: #151515;;
+    background-color: #212529;
 }
 .text-align-center {
     text-align: center;
@@ -155,7 +155,7 @@ hr {
     padding-left: 15px !important;
 }
 .search-box-div {
-    display: inherit;
+    flex-flow: row;
 }
 #tipue_search_input {
     width: auto !important;
@@ -168,6 +168,7 @@ hr {
     outline: unset !important;
     padding: 6px 12px !important;
     background: #fff !important;
+    padding right: 50px;
 }
 .tipue_search_content_url {
     display: none;
@@ -216,9 +217,9 @@ hr {
     background-color: #fff;
 }
 #search-form.collapsed{
-    background-color: #151515;
+    background-color: #212529;
     margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 10px !important;
     padding-top: .5rem !important;
     padding-bottom: .5rem !important;
 }
@@ -229,9 +230,10 @@ form .row .collapsed{
     height: 1.8rem;
     padding: 1px 6px !important;
     min-width: 60px;
+    padding left: -50px;
 }
 #last-item .collapsed{
-    background-color: #151515;
+    background-color: #212529;
 }
 #last-item .nav-link .collapsed{
     padding-bottom: 0;
