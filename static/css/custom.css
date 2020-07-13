@@ -2357,8 +2357,11 @@ margin-top: 20px;
 .contacts.no-link {
     max-width: 200px;
 }
-.index-scroll-container{
+.index-scroll-container {
 
+}
+.related-post .pop-over {
+    display: flex;
 }
 .related-post .article-row {
     display: -webkit-box;
