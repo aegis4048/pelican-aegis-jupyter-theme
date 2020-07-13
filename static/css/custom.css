@@ -85,7 +85,7 @@ hr {
     min-height: 47px;
 }
 #navbar a {
-    color: #ECF0F1 !important;
+    color: #ECF0F1;
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -174,7 +174,6 @@ hr {
     outline: unset !important;
     padding: 6px 12px !important;
     background: #fff !important;
-    padding right: 50px;
 }
 .tipue_search_content_url {
     display: none;
