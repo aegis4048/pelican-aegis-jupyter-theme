@@ -230,7 +230,7 @@ form .row .collapsed{
     height: 1.8rem;
     padding: 1px 6px !important;
     min-width: 60px;
-    padding left: -50px;
+    padding-left: -50px;
 }
 #last-item .collapsed{
     background-color: #212529;
