@@ -85,12 +85,12 @@ hr {
     min-height: 47px;
 }
 #navbar a {
-    color: #ECF0F1;
+    color: #ECF0F1 !important;
     text-transform: uppercase;
     font-weight: 500;
 }
 @media (max-width: 760px) {
-	.navbar a:hover {
+	.navbar .nav-link:hover {
 	   background-color: #ECF0F1;
 	   color: #212529 !important;
 	}
