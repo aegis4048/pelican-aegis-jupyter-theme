@@ -85,7 +85,7 @@ hr {
     min-height: 47px;
 }
 #navbar a {
-    color: #ECF0F1 !important;
+    color: #ECF0F1;
     text-transform: uppercase;
     font-weight: 500;
 }
