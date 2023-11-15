@@ -76,6 +76,8 @@ hr {
     width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    position: fixed;
+    z-index: 2;
 }
 #navbar {
     background-color: #24292e !important;
@@ -257,6 +259,8 @@ footer {
 	background-color: #263238;
 	min-height: 250px;
 	padding: 10px 0px 25px 0px;
+    position: relative;
+    z-index: 3;
 }
 .pt2 {
 	padding-top: 40px;
@@ -372,6 +376,7 @@ footer p {
     background-color: #fff;
     position: relative;
     min-height: 450px;
+    margin-top: 52px;
 }
 .masthead {
     padding: 4rem 0;
@@ -1074,6 +1079,7 @@ ul.no-bullets {
 /* progress bar */
 progress {
     position: fixed;
+    margin-top: 52px;
     left: 0;
     top: 0;
     width: 100%;
@@ -2040,7 +2046,7 @@ margin-top: 20px;
 }
 .toc_title {
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -2048,12 +2054,14 @@ margin-top: 20px;
     list-style: outside none none !important;
     margin-top: 0;
     margin-bottom: 5px;
+    line-height: 1.55;
+    color: #646464;
 }
 .toc_list a {
     text-decoration: none !important;
 }
 .toc_label {
-    color: black;
+    color: #2a2a2a;
     padding-right: 10px;
 }
 
@@ -2235,6 +2243,7 @@ margin-top: 20px;
 }
 
 .article-row {
+    cursor: pointer;
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -2854,4 +2863,63 @@ a.internal-link {
     line-height: unset;
     padding-top: unset;
     padding-bottom: unset;
+}
+.display-none {
+    display: none !important;
+}
+#article-sidebar {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 50px;
+    padding-top: 20px;
+    max-width: 20em;
+}
+#article {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 10px;
+    max-width: 70em;
+    padding-top: 40px;
+}
+#share-links {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+#article-container {
+    justify-content: center;
+}
+#article-sidebar #toc_container {
+    background: unset;
+    border: unset;
+    font-size: unset;
+    border-left: solid 1px #cdcdcd !important;
+}
+#article-sidebar .toc_list {
+    padding-left: 0;
+}
+#article-sidebar .toc_list ul {
+    padding-left: 22px;
+}
+#article-sidebar a {
+    color: inherit;
+}
+#article-sidebar #toc_container {
+    position: fixed;
+    padding-right: 0px;
+}
+#article-sidebar .toc_title i {
+    margin-right: 5px;
+}
+
+
+:target::before {
+    content: '';
+    display: block;
+    height: 70px; /* Height of fixed header */
+    margin: -70px 0 0; /* Negative margin equal to the height of the header */
+}
+
+.internal-link {
+    scroll-margin-top: 70px; /* Height of fixed header */
 }

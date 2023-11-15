@@ -92,10 +92,7 @@
         <div id="post-container" class="index col-lg-9 col-md-12 mt-4 tr-effect">
             {% for article in articles_page.object_list %}
             <div class="pop-over">
-
-
-
-                <div class="article-row" onclick="window.open('{{ SITEURL }}/{{ article.url }}','_blank')">
+                <div class="article-row" onclick="window.location='{{ SITEURL }}/{{ article.url }}';">
                     <div class="article-cell-1">
                         <img class="article-img" src="{{ article.featured_image }}"/>
                     </div>

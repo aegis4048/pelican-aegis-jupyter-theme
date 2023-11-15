@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About {{ AUTHOR_SHORTENED }} | {{ super() }}
+{% endblock title %}
+
+{% block meta_tags_in_head %}
+    {{ super() }}
+    <link rel="canonical" href="{{ SITEURL }}/{{ ABOUT_PAGE }}">
+    <meta property="og:title" content="{{ ABOUT_PAGE_TITLE }} | {{ SITENAME|striptags|e }}"/>
+    <meta name="twitter:title" content="{{ ABOUT_PAGE_TITLE }} | {{ SITENAME|striptags|e }}"/>
+    <meta property="og:url" content="{{ SITEURL }}/{{ ABOUT_PAGE }}" />
+    <meta property="og:description" content="{{ ABOUT_PAGE_DESCRIPTION }}" />
+    <meta name="twitter:description" content="{{ ABOUT_PAGE_DESCRIPTION }}"/>
+    <meta property="og:site_name" content="{{ SITENAME|striptags|e }}" />
+    <meta property="og:article:author" content="{{ AUTHOR }}" />
+    {% from '_includes/_defaults.html' import FEATURED_IMAGE with context %}
+    {% if FEATURED_IMAGE %}
+        <meta property="og:image" content="{{ FEATURED_IMAGE }}" />
+        <meta name="twitter:image" content="{{ FEATURED_IMAGE }}"/>
+    {% endif %}
+{% endblock meta_tags_in_head %}
+
+{% block content %}
+    <div class="about-profile-banner row align-items-center justify-content-center" align="center" style="background-image: url('{{ SITEURL }}/{{ INDEX_BANNER_IMAGE }}')">
+        <div class="about-content-center pop-over">
+            <div class="cc-profile-image">
+                <a href="#"><img id="about-profile-image" src="{{ SITEURL }}/{{ PROFILE_PHOTO_ABOUT }}"></a>
+            </div>
+            <div class="about-author">{{ AUTHOR }}</div>
+            <p class="about-author-subtitle text-white">{{ AUTHOR_SUBTITLE }}</p>
+            <a class="btn btn-primary aos-init aos-animate" href="{{ RESUME_PDF_LINK }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">{{ RESUME_BUTTON_TEXT }}</a>
+        </div>
+    </div>
+    <div class="section about-button-container no-padding pop-over">
+       <div class="container">
+          <div class=" row justify-content-center">
+              <a class="btn btn-default btn-lg btn-icon about-button mr-3" href="{{ LINKEDIN_LINK }}">
+                  <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a class="btn btn-default btn-round btn-lg btn-icon about-button" href="{{ GITHUB_LINK }}">
+                  <i class="fab fa-github"></i>
+              </a>
+          </div>
+       </div>
+    </div>
+    <div class="container post pop-over">
+        <div class="section" id="about" tabindex="-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="h2 mt-3 title text-center mb-5">About</div>
+                        <hr>
+                        <p>Hi, I'm Eric Kim - Data Scientist, and Petroleum Engineer.</p>
+                        <p>I'm currently working as a petroleum engineering analyst at <a href="https://flogistix.com/" target="_blank">Flogistix</a>.
+                            I received my B.S. in petroleum engineering from the University of Texas at Austin, <a href="https://www.usnews.com/best-graduate-schools/top-engineering-schools/petroleum-engineering-rankings" target="_blank">
+                            the #1 petroleum engineering school in the US.</a> My passion lies within the field of
+                            applied data science, and sharing my knowledge to the data science community.</p>
+                        <p>The goal of this blog is to provide educational materials for those people who want to learn
+                            data science. Most articles in this blog comes with in-depth discussion about each technique
+                            used, its pros & cons, when to use, and when not to use. Most visualizations & techniques
+                            introduced in each article comes with reproducible code snippets. All Code snippets are
+                            written in Python, as the blog name "Pythonic" Excursions suggest.</p>
+                        <p>If you have any questions regarding blog posts, please address them in a form of
+                            Disqus comment in each article, as it may help others with similar questions. I get Disqus
+                            notifications, and usually very responsive in answering questions. Please do not ask
+                            article-related questions through email. This includes questions with confidential company
+                            information. If you have other personal questions, you can reach me via
+                            <b>aegis4048@gmail.com</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+

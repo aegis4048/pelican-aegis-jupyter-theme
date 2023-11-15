@@ -1,0 +1,41 @@
+{% if article.related_posts %}
+{% from '_includes/_defaults.html' import RELATED_POSTS_LABEL with context %}
+<section style="margin-top: 30px">
+    <h2>{{ RELATED_POSTS_LABEL }}</h2>
+<ul class="related-posts-list related-post row">
+    {% for related_post in article.related_posts|sort(attribute = 'date') %}
+        {% set v_title = related_post.title|striptags %}
+        {% set title = related_post.title|striptags|e %}
+        {%if related_post.subtitle %}
+            {% set title = title + ' - ' + related_post.subtitle|striptags|e %}
+            {% set v_title = v_title + ' ' +  '<small>' + related_post.subtitle|striptags + '</small>' %}
+        {% endif %}
+    <div class="pop-over col-12 col-md-6 col-lg-4">
+        <div class="article-row" onclick="window.location='{{ SITEURL }}/{{ related_post.url }}';">
+            <div class="article-cell-1">
+                <img class="article-img" src="{{ related_post.featured_image }}">
+            </div>
+            <div class="article-cell-2">
+                <div class="category">{{ related_post.category }}</div>
+                <h2 class="">{{ related_post.title }}</h2>
+                <p class="excerpt">{{ related_post.indexpreview }}</p>
+                <div class="meta">
+                    <div class="meta-left">
+                        <i class="fa fa-calendar index-comment-icon"></i>
+                        <span class="index-reading-time">{{ related_post.dateprev }}</span>
+                    </div>
+                    <div class="meta-right">
+                        <i class="far fa-clock index-comment-icon"></i>
+                        <span class="index-reading-time">{{ related_post.readingtime }} min reading</span>
+                        <i class="fas fa-comment index-comment-icon" href="{{ SITEURL }}/{{ related_post.url }}#disqus_thread"></i>
+                        <a class="index-reading-time disqus-comment" href="{{ SITEURL }}/{{ related_post.url }}#disqus_thread"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</ul>
+</section>
+{% endif %}
+

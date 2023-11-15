@@ -24,9 +24,8 @@
 {% endblock meta_tags_in_head %}
 
 {% block content %}
-<div></div>
-<div id="article-container" class="row">
-    <article id="article" class="col-12 col-xl-9">
+<div id="post-container" class="container post index">
+    <article>
         <header class="pop-over">
             <h1>{{ article.title }}</h1>
             <div class="row justify-content-between no-margin">
@@ -79,6 +78,5 @@
         <hr/>
         {% include '_includes/related_posts.html' with context %}
     </article>
-    <div id="article-sidebar" class="col-12 col-xl-3"></div>
 </div>
 {% endblock content %}
