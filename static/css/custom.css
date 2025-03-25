@@ -25,6 +25,7 @@ body {
     transform: scale(0,0);
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    padding: 0 1em;
 }
 @-webkit-keyframes bummer {
     100% {
@@ -1031,7 +1032,7 @@ ul.no-bullets {
   margin-bottom: 25px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .notfound .notfound-404 {
     height: 200px;
   }
@@ -1414,6 +1415,14 @@ blockquote.quote span{
     margin-top:1em;
     float: right;
 }
+blockquote.quote2 {
+    border-left: 8px solid #555baf;
+    background: #f9f7ff;
+    line-height:1.8;
+}
+blockquote.quote2::before{
+    opacity: 0;
+}
 /* rounded  list style                    */
 
 /* list */
@@ -1549,36 +1558,72 @@ ul.ascii > li > ul > li:last-child > ul > li:last-child > ul > li:last-child > u
     width: 10%;
     margin: auto;
 }
+.full_screen_margin_15 {
+    width: 15%;
+    margin: auto;
+}
 .full_screen_margin_20 {
     width: 20%;
+    margin: auto;
+}
+.full_screen_margin_25 {
+    width: 25%;
     margin: auto;
 }
 .full_screen_margin_30 {
     width: 30%;
     margin: auto;
 }
+.full_screen_margin_35 {
+    width: 35%;
+    margin: auto;
+}
 .full_screen_margin_40 {
     width: 40%;
+    margin: auto;
+}
+.full_screen_margin_45 {
+    width: 45%;
     margin: auto;
 }
 .full_screen_margin_50 {
     width: 50%;
     margin: auto;
 }
+.full_screen_margin_55 {
+    width: 55%;
+    margin: auto;
+}
 .full_screen_margin_60 {
     width: 60%;
+    margin: auto;
+}
+.full_screen_margin_65 {
+    width: 65%;
     margin: auto;
 }
 .full_screen_margin_70 {
     width: 70%;
     margin: auto;
 }
+.full_screen_margin_75 {
+    width: 75%;
+    margin: auto;
+}
 .full_screen_margin_80 {
     width: 80%;
     margin: auto;
 }
+.full_screen_margin_85 {
+    width: 85%;
+    margin: auto;
+}
 .full_screen_margin_90 {
     width: 90%;
+    margin: auto;
+}
+.full_screen_margin_95 {
+    width: 95%;
     margin: auto;
 }
 .language-markdown {
@@ -2025,6 +2070,16 @@ ol.rounded-list,
     font-family: monaco,'Source Code Pro',monospace,'Courier New';
     margin-top: 20px;
 }
+.eq-terms-font {
+    font-family: monaco,'Source Code Pro',monospace,'Courier New';
+}
+.eq-terms-border {
+    border-bottom: 0.1px dashed rgb(220 220 220 / 50%);
+    padding: 5px 0;
+}
+.eq-terms-font p {
+    margin-top: 0;
+}
 .eq-terms-where {
     color: #008;
     margin: 0;
@@ -2192,9 +2247,21 @@ margin-top: 20px;
 }
 
 @media only screen and (max-width: 768px) {
+    article p {
+        line-height: 1.5em;
+    }
+    blockquote.quote {
+        padding: 1.2em;
+    }
+    .highlights-content {
+        padding-left: 0;
+    }
     .mobile_responsive_plot_full_width {
         width: 100%;
         margin: auto;
+    }
+    .mobile_responsive_plot_full_width .col {
+        padding: 0 !important;
     }
     .give-margin-inline-plot {
     margin: auto;
@@ -2860,6 +2927,9 @@ div.output_area {
 .ordered-list ::marker {
     font-weight: 700;
 }
+.ordered-list .no-bullets {
+    list-style-type: none;
+}
 article code.language-python {
     padding: 0 !important;
 }
@@ -2870,6 +2940,9 @@ a.internal-link {
     text-shadow: 0 0 1px #ffadad !important;
     color: red !important;
     font-family: monospace !important;
+}
+a.internal-link::before {
+    content: none;
 }
 .fig-title p {
     margin-top: 0 !important;
@@ -2988,4 +3061,309 @@ a.internal-link {
     box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
     transition: all .4s ease;
     transform: translate3D(0,-1px,0) scale(1.02);
+}
+.scroll-hidden {
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: thin; /* Thinner scrollbar */
+    scrollbar-color: #888 #f0f0f0; /* Scroll handle color and track color */
+}
+
+/* image zoom in-out */
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Greyed-out background */
+    z-index: 1000;
+    text-align: center;
+    cursor: pointer;
+}
+/* Zoomed image styling */
+.zoomed-image {
+    max-width: 90%; /* Maximum width with 5% margin on each side */
+    max-height: 90%; /* Maximum height with 5% margin on each side */
+    width: auto; /* Allow horizontal stretching */
+    height: auto; /* Allow vertical stretching */
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+/* Change cursor to pointer when hovering over images inside .row > any column */
+.row [class*="col-"] img {
+    cursor: pointer;
+}
+
+/* === CORE STRUCTURE === */
+/* === CORE STYLES === */
+.slideshow-wrapper {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgb(220, 230, 241);
+}
+
+.linkedin-slideshow {
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.slides-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    height: 100%;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 !important;
+}
+
+/* === BANDS & CONTROLS === */
+.slideshow-band {
+    padding: 7px 22px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+}
+
+.top-band {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    justify-content: space-between;
+}
+
+.bottom-band {
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    gap: 15px;
+}
+
+.slideshow-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 600;
+}
+
+.page-counter {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    min-width: 40px;
+}
+
+.progress-track {
+    display: flex;
+    flex-grow: 1;
+    gap: 8px;
+    align-items: center;
+}
+
+.progress-step {
+    height: 4px;
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: white;
+    height: 6px;
+}
+
+/* === NAVIGATION BUTTONS === */
+.bottom-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button.bottom-prev,
+.nav-button.bottom-next {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+}
+
+.nav-button.bottom-prev:hover,
+.nav-button.bottom-next:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-button.bottom-prev svg,
+.nav-button.bottom-next svg {
+    fill: white;
+    width: 16px;
+    height: 16px;
+}
+
+.nav-button.image-prev,
+.nav-button.image-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.nav-button.image-prev {
+    left: 20px;
+}
+
+.nav-button.image-next {
+    right: 20px;
+}
+
+.linkedin-slideshow:hover .nav-button.image-prev,
+.linkedin-slideshow:hover .nav-button.image-next {
+    opacity: 1;
+}
+
+.nav-button.image-prev:hover,
+.nav-button.image-next:hover {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button.image-prev svg,
+.nav-button.image-next svg {
+    fill: #666;
+    width: 20px;
+    height: 20px;
+}
+
+/* === FULLSCREEN TOGGLE === */
+.fullscreen-toggle {
+    cursor: pointer;
+    padding: 4px;
+}
+
+.fullscreen-toggle svg {
+    fill: white;
+    width: 18px;
+    height: 18px;
+}
+
+/* === FULLSCREEN OVERRIDES === */
+/* === FULLSCREEN OVERRIDES === */
+/* === FULLSCREEN FIXES === */
+.slideshow-wrapper:fullscreen .linkedin-slideshow,
+.slideshow-wrapper:-webkit-full-screen .linkedin-slideshow {
+    background: #000 !important;
+}
+
+/* Band visibility fix */
+.slideshow-wrapper:fullscreen .top-band.hidden,
+.slideshow-wrapper:-webkit-full-screen .top-band.hidden,
+.slideshow-wrapper:fullscreen .bottom-band.hidden,
+.slideshow-wrapper:-webkit-full-screen .bottom-band.hidden {
+    display: none !important;
+    pointer-events: none;
+}
+
+/* Fullscreen image container */
+.slideshow-wrapper:fullscreen .slides-container,
+.slideshow-wrapper:-webkit-full-screen .slides-container {
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Image sizing */
+.slideshow-wrapper:fullscreen .slide-image,
+.slideshow-wrapper:-webkit-full-screen .slide-image {
+    max-height: 100vh !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+}
+
+/* Visible top band */
+.slideshow-wrapper:fullscreen .top-band:not(.hidden),
+.slideshow-wrapper:-webkit-full-screen .top-band:not(.hidden) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* Visible bottom band */
+.slideshow-wrapper:fullscreen .bottom-band:not(.hidden),
+.slideshow-wrapper:-webkit-full-screen .bottom-band:not(.hidden) {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 33.33%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* Reset when exiting fullscreen */
+.slideshow-wrapper:not(:fullscreen):not(:-webkit-full-screen) .top-band,
+.slideshow-wrapper:not(:fullscreen):not(:-webkit-full-screen) .bottom-band {
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    display: flex !important;
+}
+
+/* === MOBILE RESPONSIVE (ORIGINAL STYLES) === */
+@media (max-width: 768px) {
+    .nav-button.image-prev,
+    .nav-button.image-next {
+        opacity: 1 !important;
+        width: 36px;
+        height: 36px;
+    }
+
+    .bottom-band {
+        gap: 8px;
+        padding: 7px 15px;
+    }
+
+    .nav-button.bottom-prev,
+    .nav-button.bottom-next {
+        width: 28px;
+        height: 28px;
+    }
 }
