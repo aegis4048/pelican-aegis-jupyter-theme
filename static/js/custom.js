@@ -255,20 +255,37 @@ function init_image_zoom() {
         });
     });
 }
-
 function init_slideshow() {
     $('.linkedin-slideshow').each(function() {
         const $slider = $(this);
         const $slides = $slider.find('.slide');
-        const $progressSteps = $slider.find('.progress-step');
+        const $progressTrack = $slider.find('.progress-track');
         const $pageCounter = $slider.find('.page-counter');
         let currentSlide = 0;
 
+        // Initialize progress steps
+        function initProgressBar() {
+            $progressTrack.empty();
+
+            // Create one step per slide
+            for (let i = 0; i < $slides.length; i++) {
+                $progressTrack.append('<div class="progress-step"></div>');
+            }
+
+            updateSlider();
+        }
+
         function updateSlider() {
+            // Update slides
             $slides.removeClass('active').eq(currentSlide).addClass('active');
-            $progressSteps.removeClass('active')
+
+            // Update progress steps
+            $progressTrack.find('.progress-step')
+                .removeClass('active')
                 .filter((index) => index <= currentSlide)
                 .addClass('active');
+
+            // Update counter
             $pageCounter.text(`${currentSlide + 1}/${$slides.length}`);
         }
 
@@ -282,21 +299,23 @@ function init_slideshow() {
             updateSlider();
         }
 
-        // All navigation buttons (image overlay and bottom band)
-        $slider.find('.next, .image-next, .bottom-next').click(goNext);
-        $slider.find('.prev, .image-prev, .bottom-prev').click(goPrev);
+        // Initialize progress bar
+        initProgressBar();
+
+        // Event listeners - IMPORTANT: These must use the same class names as your HTML
+        $slider.find('.bottom-next, .image-next').on('click', goNext);
+        $slider.find('.bottom-prev, .image-prev').on('click', goPrev);
 
         // Keyboard navigation
-        $(document).keydown(function(e) {
-            if ($slider.is(':hover')) {
-                if (e.keyCode == 37) goPrev();
-                if (e.keyCode == 39) goNext();
+        $(document).on('keydown', function(e) {
+            if ($slider.is(':visible')) {  // Changed from :hover to :visible for better reliability
+                if (e.key === 'ArrowLeft') goPrev();
+                if (e.key === 'ArrowRight') goNext();
             }
         });
-
-        updateSlider();
     });
 }
+
 
 function init_fullscreen() {
     $('.linkedin-slideshow').each(function() {
